@@ -5,8 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="703.0" prefWidth="520.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="application.CiscoConfGeneratorController">
+<AnchorPane prefHeight="703.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.CiscoConfGeneratorController">
    <children>
       <Label layoutX="10.0" layoutY="11.5" text="Passwörter Verschlüsseln" />
       <Label layoutX="10.0" layoutY="78.0" text="Enable Passwort" />
@@ -17,8 +16,11 @@
       <Label layoutX="10.0" layoutY="183.0" text="Username SSH" />
       <Label layoutX="10.0" layoutY="253.0" text="VTY Line Anzahl" />
       <TextField fx:id="TBpassword" layoutX="127.0" layoutY="38.0" prefWidth="383.0" />
-      <RadioButton fx:id="BNTja" layoutX="206.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionja" text="Ja" />
-      <RadioButton fx:id="BTNnein" layoutX="272.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionnein" text="Nein" />
+      <RadioButton fx:id="BNTja" layoutX="206.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionja" text="Ja">
+         <toggleGroup>
+            <ToggleGroup fx:id="toggleencrypt" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="BTNnein" layoutX="272.0" layoutY="10.0" mnemonicParsing="false" onAction="#actionnein" text="Nein" toggleGroup="$toggleencrypt" />
       <TextField fx:id="TBenable" layoutX="127.0" layoutY="73.0" prefWidth="383.0" />
       <TextField fx:id="TBHostname" layoutX="127.0" layoutY="108.0" prefWidth="383.0" />
       <TextField fx:id="TBdomain" layoutX="127.0" layoutY="143.0" prefWidth="383.0" />
@@ -35,7 +37,7 @@
       <Button fx:id="BTNvlanadd" layoutX="10.0" layoutY="338.0" mnemonicParsing="false" onAction="#vlanadd" prefWidth="160.0" text="VLAN hinzufügen" />
       <Button fx:id="BTNdelete" layoutX="350.0" layoutY="338.0" mnemonicParsing="false" onAction="#deleteList" prefWidth="160.0" text="Liste Löschen" />
       <Button fx:id="BTNvlanchange" layoutX="180.0" layoutY="338.0" mnemonicParsing="false" onAction="#vlanchange" prefWidth="160.0" text="VLAN ändern" />
-      <TableView fx:id="vlanTable" layoutX="10.0" layoutY="373.0" prefHeight="250.0" prefWidth="500.0">
+      <TableView fx:id="TableView" layoutX="10.0" layoutY="373.0" prefHeight="250.0" prefWidth="500.0">
         <columns>
           <TableColumn fx:id="COLid" prefWidth="75.0" text="VLAN ID" />
           <TableColumn fx:id="COLname" prefWidth="75.0" text="VLAN Name" />

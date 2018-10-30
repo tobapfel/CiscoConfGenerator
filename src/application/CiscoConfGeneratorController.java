@@ -7,6 +7,7 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ToggleGroup;
 
 public class CiscoConfGeneratorController {
 
@@ -21,9 +22,6 @@ public class CiscoConfGeneratorController {
 
 	@FXML
 	private TextField TBdomain;
-
-	@FXML
-	private TableView<?> vlanTable;
 
 	@FXML
 	private TextField VLANip;
@@ -45,6 +43,9 @@ public class CiscoConfGeneratorController {
 
 	@FXML
 	private TableColumn<?, ?> COLid;
+
+	@FXML
+	private ToggleGroup toggleencrypt;
 
 	@FXML
 	private TextField TBvty;
@@ -75,6 +76,9 @@ public class CiscoConfGeneratorController {
 
 	@FXML
 	private TextField TBpath;
+
+	@FXML
+	private TableView<?> TableView;
 
 	@FXML
 	void actionja(ActionEvent event) {
